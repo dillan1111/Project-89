@@ -9,6 +9,7 @@ import {
   TouchableOpacity,
   Alert} from 'react-native';
 import MyHeader from '../components/MyHeader'
+import {RFValue} from 'react-native-responsive-fontsize';
 import db from '../config'
 import firebase from 'firebase'
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 import {DrawerItems} from 'react-navigation-drawer';
 import {Avatar, Icon} from 'react-native-elements';
+import {RFValue} from 'react-native-responsive-fontsize'
 import * as ImagePicker from 'expo-image-picker'
 import firebase from 'firebase';
 import db from '../config'
@@ -82,27 +83,27 @@ export default class CustomSideBarMenu extends Component{
   }
   render() {
     return (
-      <View style={{ flex: 1}}>
+      <View style={{ flex: 1 }}>
         <View
           style={{
-            flex: 1,
+            flex: 0.5,
+            justifyContent: "center",
             alignItems: "center",
-            backgroundColor: "#FF9D9D",
+            backgroundColor: "#32867d",
           }}
         >
           <Avatar
-            rounded
+            rounded 
             source={{
               uri: this.state.image,
             }}
-            size="medium"
+            size="xlarge"
             onPress={() => this.selectPicture()}
             containerStyle={styles.imageContainer}
-            activeOpacity={0.7}
             showEditButton
           />
 
-          <Text style={{ fontWeight: "100", fontSize: 20, }}>
+          <Text style={{ fontWeight: "300", fontSize: RFValue(20), padding: RFValue(10), colour:"#ffff"}}>
             {this.state.name}
           </Text>
         </View>
@@ -110,16 +111,17 @@ export default class CustomSideBarMenu extends Component{
         <View style={styles.drawerItemsContainer}>
           <DrawerItems {...this.props} />
         </View>
+        <Icon name="logout" type="antdesign" size={RFValue(20)} iconStyle={{marginLeft: -60, marginTop: RFValue(0)}}/>
         <View style={styles.logOutContainer}>
           <TouchableOpacity
             style={styles.logOutButton}
             onPress={() => {
-              this.props.navigation.navigate("SignUpLoginScreen");
+              this.props.navigation.navigate("SignupLoginScreen");
               firebase.auth().signOut();
             }}
           >
-            <Icon name="logout" type="antdesign" size={RFValue(20)} iconStyle={{paddingLeft: RFValue(10)}}/>
-            <Text style={{fontSize: RFValue(15), fontWeight: "bold", marginLeft: RFValue(30)}}>Log Out</Text>
+            
+            <Text style={{fontSize: RFValue(15), fontWeight: "bold", marginTop: RFValue(-50)}}>Log Out</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -131,7 +133,7 @@ var styles = StyleSheet.create({
       flex:1
     },
     drawerItemsContainer:{
-      flex:0.8
+      flex:0.5
     },
     imageContainer: {
       flex: 0.75,
@@ -142,10 +144,10 @@ var styles = StyleSheet.create({
       borderRadius: 20,
     },
     logOutContainer : {
-      flexDirection: "row",
+      //flexDirection: "row",
       flex:0.2,
-      justifyContent:'flex-end',
-      paddingBottom:30
+      //justifyContent:'center',
+      //paddingBottom:30
     },
     logOutButton : {
       height:30,

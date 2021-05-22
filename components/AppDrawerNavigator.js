@@ -40,7 +40,7 @@ export const AppDrawerNavigator = createDrawerNavigator({
     MyReceivedToys :{
       screen: MyReceivedToysScreen,
       navigationOptions: {
-        drawerIcon: <Icon name="gift" type="fontawesome5"/>,
+        drawerIcon: <Icon name="gift" type="font-awesome"/>,
         drawerLabel: "My Recieved Toys"
       }
     },

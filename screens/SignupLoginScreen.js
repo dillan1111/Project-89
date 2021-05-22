@@ -175,12 +175,14 @@ export default class SignupLoginScreen extends React.Component {
                   <Input style={styles.loginBox}
                       keyboardType='email-address'
                       placeholder="abc@email.com"
-                      leftIcon={{ type: 'font-awesome', name: 'mail' }}
+                      label="Email"
+                      leftIcon={{ type: 'font-awesome-5', name: 'envelope-square' }}
                       onChangeText={(text) => 
                         this.setState({ emailId: text })
                     }/>
                     <Input style={styles.loginBox}
                       secureTextEntry={true}
+                      label="Password"
                       placeholder="Enter Password"
                       leftIcon={{ type: 'font-awesome', name: 'lock' }}
                       onChangeText={(text) => 
@@ -225,7 +227,7 @@ const styles = StyleSheet.create({
       height: 40,
       borderBottomWidth: 1.5,
       borderColor : '#ff8a65',
-      fontSize: RFValue(10),
+      fontSize: RFValue(15),
       margin:RFValue(10),
       paddingLeft:RFValue(10)
     },
