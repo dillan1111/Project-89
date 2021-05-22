@@ -1,0 +1,33 @@
+{
+  "expo": {
+    "name": "77",
+    "slug": "77",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/toy santa.png",
+    "splash": {
+      "image": "./assets/toy santa.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/toy santa.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.testuser.toyBarterApp82"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
